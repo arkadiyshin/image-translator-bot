@@ -1,4 +1,5 @@
 # Image translator bot @TranslatorImageBot
+![sticker](https://user-images.githubusercontent.com/108717969/191848691-07446ed1-d527-4e1b-b3fd-7eb992bcf0c2.jpeg)
 
 ## project status: in progress
 
