@@ -1,10 +1,12 @@
 import { v2 } from "@google-cloud/translate";
+
 import * as dotenv from 'dotenv'
 dotenv.config();
 
 const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
 
 const translator = new v2.Translate({
+    credentials: CREDENTIALS,
     projectId: CREDENTIALS.project_id
 });
 
