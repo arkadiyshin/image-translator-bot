@@ -13,7 +13,7 @@
 
 - google-cloud/translate(https://www.npmjs.com/package/@google-cloud/translate) - The Cloud Translation API, can dynamically translate text between thousands of language pairs.
 
-- cors-proxy(https://api.allorigins.win) - 
+- cors-proxy(https://allorigins.win/) - Pull contents from any page via API (as JSON/P or raw) and avoid Same-origin policy problems.
 
 ## TO-DO
 The project is under active development. You can get acquainted with the functionality that is planned to be implemented in the near future here: https://github.com/users/arkadiyshin/projects/5/
