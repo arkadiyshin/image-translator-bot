@@ -1,11 +1,11 @@
-### Image translator bot @TranslatorImageBot
+# Image translator bot @TranslatorImageBot
 
 ## project status: in progress
 
-# In this project, a Telegram bot is implemented that accepts text as an image, converts it into text and translates it.
-# At the moment, only translation from German into English has been implemented.
+#### In this project, a Telegram bot is implemented that accepts text as an image, converts it into text and translates it.
+#### At the moment, only translation from German into English has been implemented.
 
-# The following technologies were used in the project implementation
+#### The following technologies were used in the project implementation
 
 - Telegraf (https://www.npmjs.com/package/telegraf) - Telegraf is a library that makes it simple for you to develop your own Telegram bots using JavaScript or TypeScript.
 
