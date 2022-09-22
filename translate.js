@@ -10,9 +10,10 @@ const translator = new v2.Translate({
     projectId: CREDENTIALS.project_id
 });
 
-export async function translate(text, target) {
+export async function translate(text, targetLang) {
 
-    const translations = await translator.translate(text, target);
+    const translations = await translator.translate(text, targetLang);
     console.log(`Translations: ${translations}`);
     return translations[0];
+
 }

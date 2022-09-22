@@ -1,5 +1,5 @@
+import { Telegraf, Markup } from 'telegraf';
 import { recognize } from './ocr.js';
-import { Telegraf } from 'telegraf';
 import { translate } from './translate.js'
 
 import * as dotenv from 'dotenv'
@@ -7,10 +7,9 @@ dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-bot.start((ctx) => ctx.reply('Welcome'));
-bot.help((ctx) => ctx.reply('Send me a sticker'));
-bot.on('sticker', (ctx) => ctx.reply('👍'));
-bot.hears('hi', (ctx) => ctx.reply('Hey there'));
+bot.start((ctx) => {
+    ctx.reply(`Welcome ${ctx.message.from.first_name ? ctx.message.from.first_name : 'anonymous'}!`)
+});
 
 bot.on('photo', async (ctx) => {
     try {
@@ -19,7 +18,7 @@ bot.on('photo', async (ctx) => {
         const recognizedText = await recognize(fileLink);
         const translatedText = await translate(recognizedText, 'en');
 
-        await ctx.reply(translatedText);
+        await ctx.replyWithHTML(translatedText);
     } catch (error) {
         await ctx.reply(error);
     }
