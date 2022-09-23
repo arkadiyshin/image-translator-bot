@@ -20,7 +20,7 @@ const translateWizard = new Scenes.WizardScene(
         ctx.wizard.state.sourseLanguage = ctx.update.callback_query.data;
         await ctx.replyWithHTML(`You chose <b>${ctx.wizard.state.sourseLanguage}</b> language`);
         await ctx.replyWithHTML('Choose target language', Markup.inlineKeyboard([
-            TRANSLATION_LANGUGES.map((e) => [Markup.button.callback(e.alias, e.id)],)
+            TRANSLATION_LANGUGES.map((e) => Markup.button.callback(e.alias, e.id))
         ]))
 
         return ctx.wizard.next();
