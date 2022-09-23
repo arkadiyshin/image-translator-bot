@@ -1,12 +1,14 @@
 import { createWorker } from 'tesseract.js';
+import { RECOGNITION_LANGUGES } from './const.js';
 
 const worker = createWorker({
 });
 
 await worker.load();
-await worker.loadLanguage('deu');
-await worker.loadLanguage('eng');
-await worker.loadLanguage('rus');
+
+RECOGNITION_LANGUGES.forEach( async e => {
+    await worker.loadLanguage(e.id);
+})
 
 export async function recognize(fileURL, lang = 'eng') {
     try {

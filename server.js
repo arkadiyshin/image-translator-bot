@@ -12,8 +12,20 @@ bot.use(stage.middleware());
 
 bot.start((ctx) => {
     ctx.reply(`Welcome ${ctx.message.from.first_name ? ctx.message.from.first_name : 'anonymous'}!`)
-    ctx.scene.enter('TRASLATE_WIZARD_SCENE_ID')
 });
+
+bot.command('translate', (ctx) => ctx.scene.enter('TRASLATE_WIZARD_SCENE_ID'));
+bot.command('quit', async (ctx) => {
+    await ctx.telegram.leaveChat(ctx.message.chat.id);
+    await ctx.leaveChat();
+});
+
+/* function addActionButton(name, text) {
+    bot.action(name, async (ctx) => {
+        await ctx.replyWithHTML('Choose source language');
+    })
+} */
+
 
 bot.launch();
 
