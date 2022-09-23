@@ -15,19 +15,6 @@ bot.start((ctx) => {
     ctx.scene.enter('TRASLATE_WIZARD_SCENE_ID')
 });
 
-/* bot.on('photo', async (ctx) => {
-    try {
-        const photos = ctx.message.photo;
-        const fileLink = await ctx.telegram.getFileLink(photos[photos.length - 1].file_id);
-        const recognizedText = await recognize(fileLink);
-        const translatedText = await translate(recognizedText, 'ru');
-
-        await ctx.replyWithHTML(translatedText);
-    } catch (error) {
-        await ctx.reply(error);
-    }
-}); */
-
 bot.launch();
 
 // Enable graceful stop
