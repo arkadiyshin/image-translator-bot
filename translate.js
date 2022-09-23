@@ -11,9 +11,10 @@ const translator = new v2.Translate({
 });
 
 export async function translate(text, targetLang) {
-
+    console.log('start translation');
     const translations = await translator.translate(text, targetLang);
     console.log(`Translations: ${translations}`);
+    console.log('end translation');
     return translations[0];
 
 }
